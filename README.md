@@ -1,44 +1,23 @@
-# 🏢 EmployeeManagementSystem-3Tier-Console
+# 🏢 Employee Management System
 
-## 📌 Overview
-A Console-based Employee Management System built using C#, ADO.NET, and SQL Server, following the 3-Tier Architecture pattern.
-The system manages Departments and Employees with full CRUD operations, validation, and clean separation of concerns.
+## 📖 Overview
+Console-based Employee Management System built using C# with a clean 3-Tier Architecture.
 
-------------------------------------------------------------
+The system allows managing Departments and Employees with proper validation and database constraints.
+
+---
 
 ## 🏗 Architecture
 
-Presentation Layer  →  Business Layer  →  Data Access Layer  →  SQL Server
+The project follows a 3-Layer Structure:
 
-- Presentation Layer  : ConsoleUI
-- Business Layer      : Validation & Business Rules
-- Data Access Layer   : SQL Execution (ADO.NET)
-- Database            : SQL Server
+- 📦 DataAccess Layer
+- 🧠 Business Layer
+- 🖥 Presentation Layer (Console UI)
 
-------------------------------------------------------------
+This ensures separation of concerns and maintainable code structure.
 
-## ⚙ Features
-
-[Department Management]
-- Add Department
-- Update Department
-- Delete Department
-- View All Departments
-
-[Employee Management]
-- Add Employee
-- Update Employee
-- Delete Employee
-- View All Employees
-- Display Department Name using SQL JOIN
-
-[Improvements]
-- Business Layer Validation
-- Exception Handling in ConsoleUI
-- Clean 3-Tier Separation
-- SQL JOIN for professional data display
-
-------------------------------------------------------------
+---
 
 ## 🛠 Technologies Used
 
@@ -48,58 +27,61 @@ Presentation Layer  →  Business Layer  →  Data Access Layer  →  SQL Server
 - ADO.NET
 - 3-Tier Architecture
 
-------------------------------------------------------------
+---
 
-## 🗄 Database Structure
+## ✨ Features
 
-Departments Table
-- Id (Primary Key)
-- Name
+### 📁 Department Management
+- Add Department
+- Update Department
+- Delete Department
+- View All Departments
+- Prevent Duplicate Names
+- Prevent Deleting Department with Employees (Foreign Key Protection)
 
-Employees Table
-- Id (Primary Key)
-- Name
-- Email
-- Salary
-- HireDate
-- IsActive
-- DepartmentId (Foreign Key)
+### 👨‍💼 Employee Management
+- Add Employee
+- Update Employee
+- Delete Employee
+- View All Employees
+- Salary Validation
+- Email Validation
+- Department Existence Validation
 
-------------------------------------------------------------
+---
 
-## ▶ How To Run
+## 🔒 Validation & Safety
 
-1. Create a database named:
-   EmployeeManagementDB
+- Prevent empty or whitespace names
+- Prevent duplicate departments
+- Prevent negative or zero salaries
+- Safe numeric input handling
+- Foreign key protection on delete
 
-2. Create required tables (Departments & Employees).
+---
 
-3. Update the connection string in:
-   DataAccessSettings.connectionString
+## 🧪 Testing
 
-4. Run the project.
+Manual test cases were performed including:
+- Edge cases
+- Invalid inputs
+- Foreign key violations
+- Duplicate handling
+- Case sensitivity checks
 
-------------------------------------------------------------
+The system is stable and validated.
 
-## 💡 Key Learning Outcomes
+---
 
-- Applying 3-Tier Architecture in a real project
-- Separation of Concerns
-- SQL Integration using ADO.NET
-- Business Layer Validation
-- Clean Console Application Design
+## 🚀 How to Run
 
-------------------------------------------------------------
+1. Clone the repository
+2. Update connection string in `DataAccessSettings`
+3. Run the solution
+4. Use the console menu to manage departments and employees
 
-## 📂 Project Structure
+---
 
-CompanyManagementSolution
-│
-├── Company.Business
-├── Company.DataAccess
-└── CompanyManagementSolution (ConsoleUI)
+## 👨‍💻 Author
 
-------------------------------------------------------------
-
-## 🚀 Author
-Shady Mahmoud
+Built as part of backend learning journey focusing on clean architecture and solid fundamentals.
